@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>NAIMI Mohammed</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Folio
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      <!-- Uncomment below if you prefer to use an text logo -->
+      <!-- <h1 class="logo"><a href="index.html">Folio</a></h1> -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link  scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link active  scrollto" href="#journal">Blog</a></li>
+          
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Blog Single ======= -->
+    <div class="main-content paddsection">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="row">
+              <div class="container-main single-main">
+                <div class="col-md-12">
+                  <div class="block-main mb-30">
+                    <img src="assets/img/blog-post-1.jpg" width="100%" height="450" class="img-responsive" alt="reviews2">
+                    <div class="content-main single-post padDiv">
+                      <div class="journal-txt">
+                        <h4><a href="spring-aop.html">Spring AOP</a></h4>
+                      </div>
+                      <div class="post-meta">
+                        <ul class="list-unstyled mb-0">
+                          <li class="author">by:<a href="#">Mohammed NAIMI</a></li>
+                          <li class="date">date:<a href="#">February 19, 2024</a></li>
+                        </ul>
+                      </div>
+                      <p class="mb-30">Each application needs to have methods executing, exceptions handled, and security checks performed seamlessly. Each of these is crucial, but they can also clutter your core business logic, making it harder to understand and maintain. This is where Spring AOP steps in, offering a powerful way to separate these <strong> cross-cutting concerns</strong> and keep your code clean and modular.</p>
+
+                      <h6>Spring AOP demystified :</h6>
+
+                      <p class="mb-30">
+                      <strong>Joinpoints:</strong> These are specific points in your application's execution flow, like method calls or exception throws. Think of them as defined moments where you can inject your custom behavior.<br>
+                      <strong>Pointcuts:</strong> These act as filters, precisely defining which joinpoints your aspect applies to. They're like targeting mechanisms, ensuring your aspect's influence reaches the relevant areas of your code.<br>
+                      <strong>Advice :</strong> This is the action your aspect takes at a joinpoint. It could be logging a message before a method call, adding security checks, or gracefully handling exceptions. Think of advice as the specific task your aspect performs at each designated joinpoint.</p>
+
+
+                      <h6>Types of Advice:</h6>
+                      
+                      <p class="mb-30">
+                      <strong>Before:</strong> This advice executes immediately before the joinpoint occurs, allowing you to prepare or intercept the operation.<br>
+                      <strong>After:</strong> This advice executes after the joinpoint has completed, enabling you to react to the outcome or perform cleanup tasks.<br>
+                      <strong>Around:</strong> This advice grants you complete control over the joinpoint. You can execute code before, during, and after the operation, offering maximum flexibility.<br><br>
+                      <strong>Aspect:</strong> This is the glue that brings everything together. It combines pointcuts and advice into a single unit, encapsulating the cross-cutting concern and its behavior. Think of it as a reusable module that adds specific functionality to your application.</p><br>
+
+                      <strong>Why is Spring AOP this important?</strong> 
+                      <p class="mb-30">Spring AOP embodies the separation of concerns principle, a fundamental concept of clean and maintainable code. By keeping cross-cutting concerns separate, you improve code readability, reusability, and testability. It's like organizing your workspace, everything has its place, making it easier to find and use what you need. AOP is driven by SRP concept described below.<br><br>
+
+                      <blockquote>The Single Responsibility Principle (SRP) is the concept that any single object in object-oriented programing (OOP) should be made for one specific function. SRP is part of SOLID programming principles.</blockquote>
+
+                      Lastly, here is an exmple of an advice in Spring AOP</p>
+
+                      <pre>
+    //Intercept method executions of all classes within the com.example.service package
+    @Around("execution(* com.example.service.*(..))")
+    public Object handle(ProceedingJoinPoint joinPoint) throws Throwable {
+      //Capture start time execution
+      Instant start = Instant.now();
+
+      try {
+          // execute the profiled method
+          return joinPoint.proceed();
+
+      } catch (RuntimeException e) {
+          throw e;
+
+      } finally {
+          long duration = Duration.between(start, Instant.now()).toMillis();
+
+          // Log profiling result
+          Signature signature = joinPoint.getSignature();
+          LOGGER.info("{},{},{}", signature.getDeclaringType().getSimpleName()
+          , signature.getName(), duration);
+
+      }
+    }
+                      </pre>
+
+                      In this scenario, the Pointcut targets all method executions within the <code>com.example.service</code> package, regardless of the class name and the number of arguments passed. The <code>@Around</code> annotation indicates that the <code>handle()</code> method within the aspect will be invoked around each matching joinpoint. These joinpoints are essentially method calls captured by the Pointcut, and the aspect's logic defined within <code>handle()</code> will be applied before and after each such method execution.
+
+                      The main target of this advice is to measure and log time consumed in order to execute the intercepted method ( JoinPoint )
+
+                      <p class="mb-30">Thanks for reading my blog, if you have some questions or want to discuss, feel free to reach out me via mail below or on my social media accounts!</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="cmt padDiv">
+                    <form action="https://formspree.io/f/xoqgdawe" method="post" >
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Name *" required="required">
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <input id="form_email" type="email" name="email" class="form-control" placeholder="email *" required="required">
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <input id="form_name" type="text" name="subject" class="form-control" placeholder="Subject">
+                          </div>
+                        </div>
+                        <div class="col-lg-12">
+                          <div class="form-group">
+                            <textarea id="form_message" name="message" class="form-control" placeholder="Message *" style="height: 200px;" required="required"></textarea>
+                          </div>
+                        </div>
+                        <div class="col-lg-12">
+                          <input type="submit" class="btn btn-defeault btn-send" value="Send message">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Blog Single -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <div id="footer" class="text-center">
+    <div class="container">
+      <div class="socials-media text-center">
+
+        <ul class="list-unstyled">
+          <li><a href="mailto:mohammednaimi1999@gmail.com?subject=Job offer&body=Hello!
+            Can we plan a meeting to discuss a possible collaboration?"><i class="bi bi-envelope-at-fill"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/mohammednaimi"><i class="bi bi-linkedin"></i></a></li>
+          <li><a href="https://github.com/Med-NAIMI"><i class="bi bi-github"></i></a></li>
+          <li><a href="https://twitter.com/NAIMIMohammed3"><i class="bi bi-twitter"></i></a></li>
+        </ul>
+
+      </div>
+
+      <p>&copy; Copyrights Folio. All rights reserved.</p>
+
+      <div class="credits">
+        <!--
+        All the links in the footer should remain intact.
+        You can delete the links only if you purchased the pro version.
+        Licensing information: https://bootstrapmade.com/license/
+        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Folio
+      -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+
+    </div>
+  </div><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
